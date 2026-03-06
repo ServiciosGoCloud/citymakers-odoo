@@ -1,0 +1,23 @@
+services:
+  db_citymakers:               # 1. Cambiar nombre del servicio
+    image: postgres:18.0
+    container_name: db_citymakers # 2. Cambiar nombre del contenedor
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=postgres
+    restart: always
+
+  citymakers:                  # 3. Cambiar nombre del servicio
+    image: odoo:19.0
+    container_name: citymakers # 4. Cambiar nombre del contenedor
+    depends_on:
+      - db_citymakers
+    ports:
+      - "8071:8069"            # 5. ¡PUERTO 8071! (Vortex usa el 8070)
+    volumes:
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - ODOO_MASTER_PASS=GoCloud_Serv_2026
+    restart: always
