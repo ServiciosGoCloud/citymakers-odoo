@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# Archivos de configuracion por servidor (NUNCA SUBIR)
+docker-compose.yml
+config/odoo.conf
