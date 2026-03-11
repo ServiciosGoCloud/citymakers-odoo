@@ -1,7 +1,12 @@
-__pycache__/
-*.pyc
-.DS_Store
-
-# Archivos de configuracion por servidor (NUNCA SUBIR)
 docker-compose.yml
 config/odoo.conf
+
+addons
+custom_addons
+
+data/
+data/**
+
+*.pyc
+__pycache__/
+/sessions/
