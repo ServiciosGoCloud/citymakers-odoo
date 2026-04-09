@@ -1,0 +1,29 @@
+<odoo>
+    <record id="view_partner_form_vortex_sdr" model="ir.ui.view">
+        <field name="name">res.partner.form.vortex.sdr</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Información adicional" name="sdr_vortex_info">
+                    <group>
+                        <group string="Información de Empresa">
+                            <field name="x_vortex_sector"/>
+                            <field name="x_vortex_tamano"/>
+                            <field name="x_vortex_tipo_empresa"/>
+                            <field name="x_vortex_linkedin_corp" widget="url"/>
+                        </group>
+                        <group string="Datos del Decisor">
+                            <field name="x_vortex_decisor"/>
+                            <field name="x_vortex_linkedin_pers" widget="url"/>
+                            <field name="x_vortex_clasificacion"/>
+                        </group>
+                    </group>
+                    <group string="Notas adicionales">
+                        <field name="x_vortex_comentarios"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

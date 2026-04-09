@@ -1,0 +1,24 @@
+<odoo>
+    <record id="view_crm_lead_form_vortex_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.form.vortex.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Información adicional" name="vortex_sdr_crm">
+                    <group>
+                        <group string="Gestión de Venta">
+                            <field name="x_vortex_complejidad"/>
+                            <field name="x_vortex_estado_comercial"/>
+                        </group>
+                        <group string="Info del Contacto (Solo Lectura)">
+                            <field name="x_vortex_partner_sector"/>
+                            <field name="x_vortex_partner_tamano"/>
+                            <field name="x_vortex_partner_linkedin" widget="url"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
